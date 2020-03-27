@@ -61,7 +61,8 @@ module.exports = postcss.plugin('postcss-for', function (opts) {
              params[3] !== 'to' ||
              params[5] !== 'by' && params[5] !== undefined ||
              params[5] === 'by' && params[6] === undefined ) {
-            throw rule.error('Wrong loop syntax', { plugin: 'postcss-for' });
+            // throw rule.error('Wrong loop syntax', { plugin: 'postcss-for' });
+            return false;
         }
         return true;
     };
